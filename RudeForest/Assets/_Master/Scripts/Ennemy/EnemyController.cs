@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform; // Ajusta la etiqueta del jugador según tu configuración
     }
@@ -22,19 +22,19 @@ public class EnemyController : MonoBehaviour
 
         if (distanceToPlayer < detectionRange)
         {
-            Debug.Log(player.position + "Player");
+            //Debug.Log(player.position + "Player");
             // Mueve al enemigo hacia el jugador utilizando NavMesh
             navMeshAgent.destination = player.position;
 
             // El jugador está dentro del rango de detección, cambia a la animación de Run
-            animator.SetBool("IsRunning", true);
-            Debug.Log("EnemyAnim");
+            //animator.SetBool("IsRunning", true);
+            //Debug.Log("EnemyAnim");
 
         }
         else
         {
             // El jugador está fuera del rango de detección, cambia a la animación de Idle
-            animator.SetBool("IsRunning", false);
+            //animator.SetBool("IsRunning", false);
 
             // Detén al enemigo
             navMeshAgent.destination = this.transform.position;
